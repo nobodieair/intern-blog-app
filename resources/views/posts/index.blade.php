@@ -9,6 +9,16 @@
 <body>
 
     <h2>Recent Posts</h2>
+    @if (session()->has('error'))
+     <div style="background-color: red; color: white;">
+        {{ session('error') }}
+     </div>
+    @endif
+    @if (session()->has('success'))
+     <div style="background-color: green; color: white;">
+        {{ session('success') }}
+     </div>
+    @endif
     <ul>
       @foreach ($posts as $post)
         <li>
